@@ -1,15 +1,11 @@
 function getPasswordChecker(password) {
-    let pass = 'qwerty';
-
-    return function () {
-        return password === pass;
+    return function (validPass) {
+        return password === validPass;
     }
 }
 
-const pass1 = getPasswordChecker('qwerty')
-const pass2 = getPasswordChecker(123)
-console.log(pass1)
-console.log(pass1())
-console.log(pass2())
+const passUser = getPasswordChecker('qwerty')
+console.log(passUser(256))
+console.log(passUser('qwerty'))
 
 
